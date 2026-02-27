@@ -1,0 +1,305 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* Override Bulma's default 3rem padding for a denser, compact look */
+.hero-body {
+  padding: 3rem 1.5rem 1rem 1.5rem !important;
+}
+
+/* Compact, centered horizontal dividers */
+hr {
+  margin: 1.5rem auto !important;
+  max-width: 960px; /* Matches Bulma's max-desktop container */
+  background-color: #cccccc;
+  height: 1px;
+}
+
+/* Global style for main presentation videos */
+.presentation-video {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  /* a subtle, neat shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+}
+
+/* --- Global Content Block Styling --- */
+section.section {
+  padding: 1rem 1.5rem !important; /* Merged redundant padding values */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+section.section > .container {
+  background-color: #f8fafd;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+}
+
+/* Make it slightly more compact on mobile screens */
+@media screen and (max-width: 768px) {
+  section.section > .container {
+    padding: 1.5rem;
+  }
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* --- Publication related --- */
+.publication-banner {
+  max-height: parent;
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-title,
+.publication-authors,
+.publication-venue {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    margin-top: 0.5em;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Position the superscript container */
+.author-affiliation {
+  top: -0.6em;       /* Adjusts the vertical position of the icon */
+  margin-left: 1px;  /* Slight gap between the name and the icon */
+}
+
+/* Set the icon size to exactly 20px */
+.author-affiliation img {
+  height: 16px;      /* Set height to 16 pixels as requested originally */
+  width: auto;
+  vertical-align: middle;
+}
+
+/* Adjust line spacing for the larger superscript icons */
+.publication-authors {
+  line-height: 1.3; 
+}
+
+
+/* --- Input Pair Animation --- */
+
+.input-gif-wrapper {
+  position: relative;
+  grid-row: span 2; 
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; 
+}
+
+.input-image-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; 
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; 
+  border-radius: 4px;
+  border: 1px solid #dbdbdb;
+  opacity: 1;
+  animation: none; 
+}
+
+.input-image-frame:first-child {
+  z-index: 1;
+}
+
+.input-image-frame:nth-child(2) {
+  z-index: 2;
+  animation: tenPercentFade 2s infinite linear;
+}
+
+@keyframes tenPercentFade {
+  0%   { opacity: 0; }
+  40%  { opacity: 0; } 
+  50%  { opacity: 1; } 
+  90%  { opacity: 1; } 
+  100% { opacity: 0; } 
+}
+
+
+/* --- Method Comparison Grid --- */
+
+.method-comparison-container {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.method-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(5, 1fr); 
+  gap: 6px;
+  align-items: stretch;
+}
+
+.method-header {
+  text-align: center;
+  font-family: 'Google Sans', sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding-bottom: 5px;
+}
+
+.method-result-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+}
+
+.method-result-wrapper img,
+.method-result-wrapper video {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.method-result-wrapper > div[style*="background-color"] {
+  height: 100% !important;
+}
+
+.overlay-label {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2px 5px;
+  font-size: 0.7rem;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.grid-spacer {
+  grid-column: 1 / -1; 
+  height: 10px;        
+}
+
+/* --- 4D Interpolation Grid --- */
+.interpolation-grid {
+  display: grid;
+  grid-template-columns: 1fr 20px repeat(3, 1fr); 
+  gap: 6px;
+  align-items: stretch;
+}
+
+.interpolation-grid .input-gif-wrapper {
+  grid-row: auto;
+}
+
+/* --- Expandable Content & Blue Toned Buttons --- */
+.dataset-header-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Default state: Solid Dark Navy (Concept: Off/Collapsed) */
+.title-btn {
+  background-color: #0d6fb0;   /* Dark navy background */
+  border: 1px solid #0d6fb0;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  color: #ffffff;              /* White text for high contrast */
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+}
+
+/* Hover state: Becomes a slightly lighter blue */
+.title-btn:hover {
+  background-color: #053a5c;
+  border-color: #053a5c;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Toggled state: Ghost/White style (Concept: On/Expanded) */
+.title-btn.is-active {
+  background-color: #ffffff;  /* Pure white background */
+  color: #053a5c;             /* Dark navy text */
+  border: 1px solid #053a5c;  /* Dark navy border */
+}
+
+/* Icon logic */
+.title-btn .icon {
+  font-size: 0.55rem;
+  color: #ffffff;             /* Starts white to match text */
+  transition: transform 0.3s ease;
+}
+
+.title-btn.is-active .icon {
+  transform: rotate(180deg);
+  color: #053a5c;             /* Becomes dark blue in the active state */
+}
+
+/* Hide grid by default */
+.expandable-content {
+  display: none !important;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.4s ease;
+}
+
+/* Specific rule for revealed interpolation and comparison grids */
+.method-comparison-grid.expandable-content.is-active,
+.interpolation-grid.expandable-content.is-active {
+  display: grid !important;
+  opacity: 1;
+  transform: translateY(0);
+}

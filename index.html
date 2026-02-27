@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="UFO-4D: Unposed Feedforward 4D reconstruction from Two Images">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UFO-4D: Unposed Feedforward 4D reconstruction from Two Images</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <link rel="icon" href="static/image/icon/ufo.png" type="image/png">
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              <img src="static/image/icon/ufo.png" alt="UFO Icon" style="width: 1.2em; vertical-align: middle; margin-right: 0.1em; position: relative; top: -0.08em;">
+              UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images
+            </h1>
+
+            <div class="is-size-5 publication-authors mb-2">
+              <span class="author-block">
+                <a href="https://hurjunhwa.github.io/">Junhwa Hur</a>
+                <sup class="author-affiliation"><img src="static/image/icon/google.png"></sup>
+                &nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=LQvi5XAAAAAJ&hl=en">Charles Herrmann</a>
+                <sup class="author-affiliation"><img src="static/image/icon/google.png"></sup>
+                &nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://pengsongyou.github.io/">Songyou Peng</a>
+                <sup class="author-affiliation"><img src="static/image/icon/google.png"></sup>
+                &nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://henzler.github.io/">Philipp Henzler</a>
+                <sup class="author-affiliation"><img src="static/image/icon/google.png"></sup>
+                &nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://mazeyu.github.io/">Zeyu Ma</a>
+                <sup class="author-affiliation"><img src="static/image/icon/princeton.svg"></sup>
+                &nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://zickler.seas.harvard.edu/">Todd Zickler</a>
+                <sup class="author-affiliation"><img src="static/image/icon/harvard.png"></sup>
+                &nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://deqings.github.io/">Deqing Sun</a>
+                <sup class="author-affiliation"><img src="static/image/icon/google.png"></sup>
+              </span>
+            </div>
+            
+            <div class="is-size-5 publication-authors mb-2">
+              <span class="author-block">
+                <sup class="author-affiliation"><img src="static/image/icon/google.png"></sup>
+                Google
+                &nbsp;&nbsp;&nbsp;
+              </span> 
+              <span class="author-block">
+                <sup class="author-affiliation"><img src="static/image/icon/princeton.svg"></sup>
+                Princeton University
+                &nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <sup class="author-affiliation"><img src="static/image/icon/harvard.png"></sup>
+                Harvard University
+              </span>
+            </div>
+
+            <div class="is-size-4 publication-venue">
+              <b>ICLR 2026</b>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container is-max-desktop content">
+      <div class="columns is-centered">
+        <div class="column is-11">
+          <video id="teaser" class="presentation-video" autoplay controls muted loop playsinline>
+            <source src="./static/video/teaser.m4v" type="video/mp4">
+            (The browser does not support the video tag)
+          </video>
+          <p class="has-text-centered is-size-5" style="margin-top: 15px;">
+            <b>Feedforward 4D reconstruction from just two unposed images</b>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-3">How it works</h3>
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <video id="method-video" class="presentation-video" autoplay controls muted loop playsinline>
+            <source src="./static/video/method.m4v" type="video/mp4">
+            (The browser does not support the video tag)
+          </video>
+        </div>
+      </div>
+
+      <div class="content has-text-justified">
+        <p>
+          UFO-4D predicts dynamic 3D Gaussians and camera poses from a pair of unposed images in a single feedforward pass.
+          This unified representation enables rendering of image, 3D geometry, and 3D motion at any intermediate view or timestamp using just one model.
+          Via semi-supervised training through the differentiable 4D rasterizer, UFO-4D unlocks three major advantages:
+        </p>
+        <ul>
+          <li>A dense, self-supervised photometric loss to mitigate the scarcity of training data with 4D annotation.</li>
+          <li>Tight coupling of appearance, geometry, and motion with 3D Gaussians, for mutual regularization.</li>
+          <li>High-fidelity appearance, 3D geometry, and 3D motion rendering at any novel view or point in time.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">4D Interpolation</h3>
+      <div class="method-comparison-container">
+        <div class="content has-text-justified">
+          <p>
+            Given predicted dynamic 3D Gaussians, we can rasterize images, depth, and motion at interpolated timestamps and views. Both depth and motion are defined in the canonical camera coordinate. In motion visualization, only moving objects are highlighted in non-white colors.
+          </p>
+        </div>
+
+        <div class="dataset-header-container mb-4">
+          <h4 class="title is-4 mb-1 is-inline">Small/medium motion</h4>
+          <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('interp-small-more', this)">
+            <span class="button-text">More Examples</span>
+            <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
+          </button>
+        </div>
+        <p>UFO-4D successfully interpolates and renders high-quality images, depth, and motion from predicted dynamic 3D Gaussians.</p>
+        <br>
+        <div class="interpolation-grid">
+          <div class="method-header">Input pairs</div>
+          <div></div>
+          <div class="method-header">4D Interpolated image</div>
+          <div class="method-header">Interpolated depth</div>
+          <div class="method-header">Interpolated motion</div>
+          <div class="interpolation-macro" data-degree="small_medium_motion" data-scene="-ExndllifRE-clip3-frame_28_45"></div>
+          <div class="interpolation-macro" data-degree="small_medium_motion" data-scene="rgbd_bonn_crowd3_1548339961.77666_1548339962.11179"></div>
+        </div>
+        <div id="interp-small-more" class="interpolation-grid expandable-content">
+          <div class="interpolation-macro" data-degree="small_medium_motion" data-scene="8yFWA2Goxl8-clip5-frame_24_39"></div>
+          <div class="interpolation-macro" data-degree="small_medium_motion" data-scene="DLG1Wbri9ew-clip43-frame_4_22"></div>
+          <div class="interpolation-macro" data-degree="small_medium_motion" data-scene="rgbd_bonn_person_tracking2_1548265922.17945_1548265922.51462"></div>
+        </div>
+
+        <hr />
+
+        <div class="dataset-header-container mb-4">
+          <h4 class="title is-4 mb-1 is-inline">Large motion</h4>
+          <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('interp-large-more', this)">
+            <span class="button-text">More Examples</span>
+            <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
+          </button>
+        </div>
+        <p>Even on scenarios with large motion, UFO-4D robustly outputs all estimates from unposed two images.</p>
+        <br>
+        <div class="interpolation-grid">
+          <div class="method-header">Input pairs</div>
+          <div></div>
+          <div class="method-header">4D Interpolated image</div>
+          <div class="method-header">Interpolated depth</div>
+          <div class="method-header">Interpolated motion</div>
+          <div class="interpolation-macro" data-degree="large_motion" data-scene="-GjokU2CXow-clip30-frame_16_38"></div>
+          <div class="interpolation-macro" data-degree="large_motion" data-scene="MhxqBDWonRw-clip137-frame_21_43"></div>
+        </div>
+        <div id="interp-large-more" class="interpolation-grid expandable-content">
+          <div class="interpolation-macro" data-degree="large_motion" data-scene="GPYLDy33y7Q-clip6-frame_100_114"></div>
+          <div class="interpolation-macro" data-degree="large_motion" data-scene="GRTYzq7noG0-clip1-frame_23_42"></div>
+        </div>
+
+        <hr />
+
+        <div class="dataset-header-container mb-4">
+          <h4 class="title is-4 mb-1 is-inline">Extreme motion (stress test)</h4>
+          <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('interp-extreme-more', this)">
+            <span class="button-text">More Examples</span>
+            <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
+          </button>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            For extreme motion or minimal overlap, UFO-4D accurately estimates camera motion and static geometry, though dynamic object motion becomes challenging.
+          </p>
+        </div>
+        <div class="interpolation-grid">
+          <div class="method-header">Input pairs</div>
+          <div></div>
+          <div class="method-header">4D Interpolated image</div>
+          <div class="method-header">Interpolated depth</div>
+          <div class="method-header">Interpolated motion</div>
+          <div class="interpolation-macro" data-degree="extreme_motion" data-scene="GRTYzq7noG0-clip103-frame_55_161"></div>
+        </div>
+        <div id="interp-extreme-more" class="interpolation-grid expandable-content">
+          <div class="interpolation-macro" data-degree="extreme_motion" data-scene="3TCSW3fOFJY-clip23-frame_113_150"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">Qualitative comparison</h3>
+      <div class="method-comparison-container">
+        <div class="content has-text-justified">
+          UFO-4D provides superior depth and motion accuracy under significant camera rotation and large object motion. It effectively disentangles dynamic motion from ego-motion while preserving clear motion boundaries and geometric consistency.
+        </div>
+
+        <div class="dataset-header-container mb-4">
+          <h4 class="title is-4 mb-1 is-inline">Stereo4D</h4>
+          <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('stereo4d-more', this)">
+            <span class="button-text">More Examples</span>
+            <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
+          </button>
+        </div>
+
+        <div class="method-comparison-grid">
+          <div class="method-header">Input Pair</div>
+          <div class="method-header">DynaDUSt3R</div>
+          <div class="method-header">ZeroMSF</div>
+          <div class="method-header">St4RTrack</div>
+          <div class="method-header" style="font-weight: 800; color: #0d6fb0;">UFO-4D (Ours)</div>
+          <div class="method-header">Ground truth</div>
+          <div class="results-macro" data-dataset="stereo4d" data-seq="MhxqBDWonRw-clip137-frame_21_43"></div>
+        </div>
+        <div id="stereo4d-more" class="method-comparison-grid expandable-content">
+          <div class="results-macro" data-dataset="stereo4d" data-seq="6nL_ifACgfE-clip0-frame_50_72"></div>
+          <div class="results-macro" data-dataset="stereo4d" data-seq="CLsVoV-9OrI-clip6-frame_5_29"></div>
+        </div>
+
+        <hr />
+
+        <div class="dataset-header-container mb-4">
+          <h4 class="title is-4 mb-1 is-inline">Bonn</h4>
+          <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('bonn-more', this)">
+            <span class="button-text">More Examples</span>
+            <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
+          </button>
+        </div>
+
+        <div class="method-comparison-grid">
+          <div class="method-header">Input Pair</div>
+          <div class="method-header">DynaDUSt3R</div>
+          <div class="method-header">ZeroMSF</div>
+          <div class="method-header">St4RTrack</div>
+          <div class="method-header" style="font-weight: 800; color: #0d6fb0;">UFO-4D (Ours)</div>
+          <div class="method-header">Ground truth</div>
+          <div class="results-macro" data-dataset="bonn" data-seq="rgbd_bonn_balloon2_1548266532.18884_1548266532.52390"></div>
+        </div>
+        <div id="bonn-more" class="method-comparison-grid expandable-content">
+          <div class="results-macro" data-dataset="bonn" data-seq="rgbd_bonn_crowd2_1548339893.24032_1548339893.57482"></div>
+          <div class="results-macro" data-dataset="bonn" data-seq="rgbd_bonn_person_tracking2_1548265922.17945_1548265922.51462"></div>
+        </div>
+
+        <hr />
+
+        <div class="dataset-header-container mb-4">
+          <h4 class="title is-4 mb-1 is-inline">KITTI</h4>
+          <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('kitti-more', this)">
+            <span class="button-text">More Examples</span>
+            <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
+          </button>
+        </div>
+
+        <div class="method-comparison-grid">
+          <div class="method-header">Input Pair</div>
+          <div class="method-header">DynaDUSt3R</div>
+          <div class="method-header">ZeroMSF</div>
+          <div class="method-header">St4RTrack</div>
+          <div class="method-header" style="font-weight: 800; color: #0d6fb0;">UFO-4D (Ours)</div>
+          <div class="method-header">Ground truth</div>
+          <div class="results-macro" data-dataset="kitti" data-seq="000188_10"></div>
+        </div>
+        <div id="kitti-more" class="method-comparison-grid expandable-content">
+          <div class="results-macro" data-dataset="kitti" data-seq="000190_10"></div>
+          <div class="results-macro" data-dataset="kitti" data-seq="000022_10"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">BibTeX</h2>
+        <pre><code>@inproceedings{Hur:2026:UFO,
+  title = {{UFO-4D}: Unposed Feedforward 4{D} Reconstruction from Two Images},
+  author = {Hur, Junhwa and Herrmann, Charles and Peng, Songyou and Henzler, Philipp and Ma, Zeyu and Zickler, Todd and Sun, Deqing},
+  booktitle = {ICLR},
+  year = {2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+            </p>
+            <p>
+              Website source code based on the <a rel="nerfies" href="https://nerfies.github.io/">Nerfies</a> project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

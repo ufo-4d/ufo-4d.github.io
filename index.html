@@ -85,14 +85,14 @@
               </span>
             </div>
 
-            <div class="is-size-4 publication-venue">
+            <div class="is-size-5 publication-venue">
               <b>ICLR 2026</b>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://openreview.net/pdf?id=8gDDWqO59H" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -108,11 +108,11 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <a href="" class="external-link button is-normal is-rounded is-gray">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (soon)</span>
                   </a>
                 </span>
               </div>
@@ -128,11 +128,11 @@
       <div class="columns is-centered">
         <div class="column is-11">
           <video id="teaser" class="presentation-video" autoplay controls muted loop playsinline>
-            <source src="./static/video/teaser.m4v" type="video/mp4">
+            <source src="./static/video/teaser.mp4" type="video/mp4">
             (The browser does not support the video tag)
           </video>
           <p class="has-text-centered is-size-5" style="margin-top: 15px;">
-            <b>Feedforward 4D reconstruction from just two unposed images</b>
+            <i>Feedforward 4D reconstruction from just two unposed images</i>
           </p>
         </div>
       </div>
@@ -141,11 +141,11 @@
 
   <section class="section">
     <div class="container is-max-desktop content">
-      <h3 class="title is-3">How it works</h3>
+      <h3 class="title is-4">How it works</h3>
       <div class="columns is-centered">
         <div class="column is-full">
           <video id="method-video" class="presentation-video" autoplay controls muted loop playsinline>
-            <source src="./static/video/method.m4v" type="video/mp4">
+            <source src="./static/video/method.mp4" type="video/mp4">
             (The browser does not support the video tag)
           </video>
         </div>
@@ -168,7 +168,7 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h3 class="title is-3">4D Interpolation</h3>
+      <h3 class="title is-4">4D Interpolation</h3>
       <div class="method-comparison-container">
         <div class="content has-text-justified">
           <p>
@@ -177,9 +177,9 @@
         </div>
 
         <div class="dataset-header-container mb-4">
-          <h4 class="title is-4 mb-1 is-inline">Small/medium motion</h4>
+          <h4 class="title is-5 mb-1 is-inline">Small/medium motion</h4>
           <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('interp-small-more', this)">
-            <span class="button-text">More Examples</span>
+            <span class="button-text">Show more</span>
             <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
           </button>
         </div>
@@ -203,9 +203,9 @@
         <hr />
 
         <div class="dataset-header-container mb-4">
-          <h4 class="title is-4 mb-1 is-inline">Large motion</h4>
+          <h4 class="title is-5 mb-1 is-inline">Large motion</h4>
           <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('interp-large-more', this)">
-            <span class="button-text">More Examples</span>
+            <span class="button-text">Show more</span>
             <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
           </button>
         </div>
@@ -228,9 +228,9 @@
         <hr />
 
         <div class="dataset-header-container mb-4">
-          <h4 class="title is-4 mb-1 is-inline">Extreme motion (stress test)</h4>
+          <h4 class="title is-5 mb-1 is-inline">Extreme motion (stress test)</h4>
           <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('interp-extreme-more', this)">
-            <span class="button-text">More Examples</span>
+            <span class="button-text">Show more</span>
             <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
           </button>
         </div>
@@ -257,16 +257,16 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h3 class="title is-3">Qualitative comparison</h3>
+      <h3 class="title is-4">Qualitative comparison</h3>
       <div class="method-comparison-container">
         <div class="content has-text-justified">
           UFO-4D provides superior depth and motion accuracy under significant camera rotation and large object motion. It effectively disentangles dynamic motion from ego-motion while preserving clear motion boundaries and geometric consistency.
         </div>
 
         <div class="dataset-header-container mb-4">
-          <h4 class="title is-4 mb-1 is-inline">Stereo4D</h4>
+          <h4 class="title is-5 mb-1 is-inline">Stereo4D</h4>
           <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('stereo4d-more', this)">
-            <span class="button-text">More Examples</span>
+            <span class="button-text">Show more</span>
             <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
           </button>
         </div>
@@ -288,9 +288,9 @@
         <hr />
 
         <div class="dataset-header-container mb-4">
-          <h4 class="title is-4 mb-1 is-inline">Bonn</h4>
+          <h4 class="title is-5 mb-1 is-inline">Bonn</h4>
           <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('bonn-more', this)">
-            <span class="button-text">More Examples</span>
+            <span class="button-text">Show more</span>
             <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
           </button>
         </div>
@@ -312,9 +312,9 @@
         <hr />
 
         <div class="dataset-header-container mb-4">
-          <h4 class="title is-4 mb-1 is-inline">KITTI</h4>
+          <h4 class="title is-5 mb-1 is-inline">KITTI</h4>
           <button class="expand-bridge-btn title-btn ml-4" onclick="toggleExpand('kitti-more', this)">
-            <span class="button-text">More Examples</span>
+            <span class="button-text">Show more</span>
             <span class="icon is-small"><i class="fas fa-chevron-down"></i></span>
           </button>
         </div>
@@ -339,7 +339,7 @@
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title is-3">BibTeX</h2>
+      <h2 class="title is-4">BibTeX</h2>
         <pre><code>@inproceedings{Hur:2026:UFO,
   title = {{UFO-4D}: Unposed Feedforward 4{D} Reconstruction from Two Images},
   author = {Hur, Junhwa and Herrmann, Charles and Peng, Songyou and Henzler, Philipp and Ma, Zeyu and Zickler, Todd and Sun, Deqing},
@@ -358,7 +358,7 @@
               This website is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
             </p>
             <p>
-              Website source code based on the <a rel="nerfies" href="https://nerfies.github.io/">Nerfies</a> project page.
+              Website source code based on the <a rel="nerfies" href="https://nerfies.github.io/">Nerfies</a> project page and Gemini's help.
             </p>
           </div>
         </div>

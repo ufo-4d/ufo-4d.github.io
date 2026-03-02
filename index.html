@@ -337,17 +337,39 @@
     </div>
   </section>
 
+
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title is-4">BibTeX</h2>
-        <pre><code>@inproceedings{Hur:2026:UFO,
+      <div style="position: relative;">
+        <button id="copy-btn" onclick="copyBibtex()" class="button is-small" style="position: absolute; top: 8px; right: 8px; z-index: 10; background-color: #f8fafd; border-color: transparent;">
+          Copy
+        </button>
+        <pre><code id="bibtex-content">@inproceedings{Hur:2026:UFO,
   title = {{UFO-4D}: Unposed Feedforward 4{D} Reconstruction from Two Images},
   author = {Hur, Junhwa and Herrmann, Charles and Peng, Songyou and Henzler, Philipp and Ma, Zeyu and Zickler, Todd and Sun, Deqing},
   booktitle = {ICLR},
   year = {2026}
 }</code></pre>
+      </div>
     </div>
   </section>
+  <script>
+    function copyBibtex() {
+      const bibtexText = document.getElementById('bibtex-content').innerText;
+      const copyBtn = document.getElementById('copy-btn');
+
+      navigator.clipboard.writeText(bibtexText).then(() => {
+        copyBtn.innerText = 'Copied';
+        setTimeout(() => {
+          copyBtn.innerText = 'Copy';
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+        copyBtn.innerText = 'Failed';
+      });
+    }
+  </script>
 
   <footer class="footer">
     <div class="container">

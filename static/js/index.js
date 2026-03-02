@@ -14,7 +14,7 @@ function toggleExpand(targetId, btnElement) {
     textSpan.style.opacity = '0';
     
     setTimeout(() => {
-        textSpan.textContent = isExpanding ? "Show Less" : "More Examples";
+        textSpan.textContent = isExpanding ? "Show Less" : "Show more";
         textSpan.style.opacity = '1';
     }, 150);
 }
